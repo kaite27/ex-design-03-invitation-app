@@ -27,6 +27,7 @@ body {
   font-size: 16px;
   text-rendering: optimizeLegibility;
   line-height: 1;
+  overflow-x: hidden;
 }
 
 /* GENERAL MODULES */
@@ -45,8 +46,7 @@ body {
 
 /* hidden contents */
 
-.offScreen,
-.a11y-hidden {
+.offScreen {
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -57,39 +57,6 @@ body {
   line-height: 0;
 }
 
-.responsive {
-  max-width: 100%;
-  height: auto;
-}
-
-/* apha grid */
-
-.apha-grid:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1200px;
-  height: 100%;
-  z-index: 100;
-  left: 50%;
-  transform: translateX(-50%);
-  background: repeating-linear-gradient( to right, hsla(70, 90%, 60%, 0.4) 0px, hsla(70, 90%, 60%, 0.4) 20px, hsla(200, 90%, 60%, 0.4) 20px, hsla(200, 90%, 60%, 0.4) 295px);
-}
-
-/* grid toggle bnt */
-
-.btn-grid {
-  position: fixed;
-  top: 2em;
-  right: 2em;
-  background: black;
-  color: #fff;
-  padding: 1em;
-  border-radius: 5px;
-  z-index: 100;
-}
-
 /* REUSABLE COMPONENTS */
 
 .container {
@@ -98,6 +65,7 @@ body {
   height: auto;
   position: relative;
   padding: 0 !important;
+  margin: 0 !important;
 }
 
 .row {
@@ -629,6 +597,7 @@ nav>.main-nav>li:last-child {
 }
 
 .text-only-box {
+  background-color: rgba(255, 255, 255, 0.3);
   position: absolute;
   left: 50%;
   top: 45%;
@@ -661,9 +630,14 @@ nav>.main-nav>li:last-child {
   overflow: hidden;
 }
 
+.image-box li {
+  overflow: hidden;
+}
+
 .image-box img {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .js__imageBox {

@@ -63,6 +63,13 @@
   .image-box li img {
     max-width: fit-content;
   }
+  .cover-image1 img,
+  .cover-image2 img {
+    transform: translateX(-18%) !important;
+  }
+  .cover-image3 img {
+    transform: translateX(-31%) !important;
+  }
   .hero-text-02 {
     display: none;
   }
