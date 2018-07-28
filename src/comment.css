@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* ------------------------------------ */
+
+/* GREETINGS */
+
+/* ---------------------------------- */
+
+@media only screen and (max-width: 800px) {
+  .greetings {
+    padding-top: 60px;
+  }
+  .row {
+    padding: 10px 0;
+  }
+  .section-text-01 {
+    margin-bottom: 20px;
+  }
+  .testmonial {
+    text-align: left;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto;
+    grid-template-areas: "au tx"
+  }
+  .testmonial-text {
+    grid-area: tx;
+    text-overflow: none;
+    word-wrap: normal;
+  }
+  .testmonial>.author {
+    margin-left: 30px;
+    grid-area: au;
+    font-size: 1rem;
+    display: block;
+    padding-top: 0px;
+  }
+  .testmonial>.author:before {
+    display: none;
+  }
+  .testmonial>.quote {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 5px 7px;
+    font-size: 1.2rem;
+    top: 2px;
+    left: 2%;
+  }
+  .testmonial>.quote i {
+    font-size: 1rem;
+  }
+  .greetings .button-group {
+    margin-top: 0px;
+  }
+  .greetings .leave-comment {
+    background-color: #f7cd9d !important;
+  }
+  #leaveCommModal {
+    height: 410px !important;
+    overflow-y: hidden;
+  }
+  .leave-modal-title {
+    font-size: 1.8rem;
+  }
+  .form-group {
+    margin-bottom: 0px;
+  }
+  .col-form-label {
+    font-size: 1.1rem;
+  }
+  .btn-leave-comm {
+    background-color: #f7cd9d !important;
+  }
+  .modal-doen-span {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+}
