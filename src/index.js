@@ -429,8 +429,8 @@ for (let i = 0; i < kakaoNav.length; i++) {
     e.preventDefault();
     Kakao.Navi.start({
       name: "라비다 하우스",
-      x: 127.11205203011632,
-      y: 37.39279717586919,
+      x: 127.099823,
+      y: 37.249854,
       coordType: 'wgs84'
     });
   });
