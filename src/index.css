@@ -15,7 +15,7 @@ a,
 a:hover,
 a:active {
   text-decoration: none;
-  color: inherit;
+  color: #fff;
 }
 
 html,
@@ -570,6 +570,10 @@ nav>.main-nav {
   line-height: calc(10vh - 10px);
 }
 
+nav>.main-nav a {
+  color: #666;
+}
+
 nav>.main-nav>li {
   display: inline-block;
   padding: 5px 10px;
@@ -1061,6 +1065,9 @@ nav>.main-nav>li:last-child {
   font-size: 1.3rem;
   margin-right: 3px;
 }
+.event-info a {
+  color: #666;
+}
 
 /* ------------------------------------------------------------------------------------- */
 
@@ -1103,12 +1110,12 @@ fieldset .rsvp-comment {
 
 fieldset .rsvp__span {
   display: block;
-  margin: 5px 6px;
+  margin: 10px 6px;
 }
 
 fieldset .input-label {
   display: inline-block;
-  margin: 0 10px;
+  margin: 3px 10px;
   overflow: hidden;
   cursor: pointer;
 }

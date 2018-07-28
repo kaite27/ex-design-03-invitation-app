@@ -203,11 +203,11 @@ function initMap() {
   const icons = {
     wedding: {
       icon:
-        "https://github.com/beigenut/ex-design-03-invitation/blob/master/images/location.png?raw=true"
+        "https://github.com/beigenut/ex-design-03-invitation/blob/master/src/images/location.png?raw=true"
     },
     bridal: {
       icon:
-        "https://github.com/beigenut/ex-design-03-invitation/blob/master/images/location2.png?raw=true"
+        "https://github.com/beigenut/ex-design-03-invitation/blob/master/src/images/location2.png?raw=true"
     }
   };
 
@@ -328,7 +328,7 @@ plus.addEventListener("click", e => {
   if (currentOpen === 1) {
     form2.classList.remove("hide");
     currentOpen = 2;
-    remove.classList.remove("btna-disable");
+    remove.classList.remove("btn-disable");
   } else {
     form3.classList.remove("hide");
     currentOpen = 3;
