@@ -419,7 +419,7 @@ async function sendApplication() {
 // 카카오 친구 1:1 대화 연결
 const chatToUs = document.querySelector(".kakao2");
 
-Kakao.init("debc5c4df380f44ec9068131a7888437");
+Kakao.init("2fde21c147f65fbd8a546b41a606a3dd");
 
 // 카카오 내비 연동
 const kakaoNav = document.querySelectorAll(".kakaoNav");
