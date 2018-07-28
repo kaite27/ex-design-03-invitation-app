@@ -170,6 +170,9 @@
   .event-contents {
     grid-area: ec;
   }
+  .event-contents .fa-heart {
+    left: 46%;
+  }
   .event-contents .event-box-image {
     margin: 0 auto;
     width: 98%;

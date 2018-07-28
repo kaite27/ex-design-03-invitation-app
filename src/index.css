@@ -1030,7 +1030,7 @@ nav>.main-nav>li:last-child {
   color: #f06374;
 }
 
-.event-contents .ion-heart {
+.event-contents .fa-heart {
   position: absolute;
   top: 30%;
   left: 48%;
@@ -1094,10 +1094,6 @@ nav>.main-nav>li:last-child {
 
 /* ------------------------------------------------------------------------------------- */
 
-.rsvp {
-  /* background-color: #fff1f1; */
-}
-
 .rsvp-call {
   display: inline-block;
   margin: 0 1% 10px 3%;
@@ -1108,6 +1104,9 @@ nav>.main-nav>li:last-child {
   margin: 0 0 10px 0 !important;
 }
 
+.call-box i {
+  font-size: 1.2rem;
+}
 /* fielset design */
 
 .rsvp fieldset {

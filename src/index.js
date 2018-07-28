@@ -133,14 +133,14 @@ $(document).ready(function() {
 
     nav.slideToggle(200);
 
-    if (icon.hasClass("ion-navicon-round")) {
-      icon.addClass("ion-close-round");
-      icon.removeClass("ion-navicon-round");
+    if (icon.hasClass("fa-bars")) {
+      icon.addClass("fa-times");
+      icon.removeClass("fa-bars");
       mobileMenu.css("display", "block");
       logo.css("display", "none");
     } else {
-      icon.addClass("ion-navicon-round");
-      icon.removeClass("ion-close-round");
+      icon.addClass("fa-bars");
+      icon.removeClass("fa-times");
       mobileMenu.css("display", "none");
       logo.css("display", "block");
     }
