@@ -419,7 +419,7 @@ async function sendApplication() {
 // 카카오 친구 1:1 대화 연결
 const chatToUs = document.querySelector(".kakao2");
 
-Kakao.init("33d82a6f1a3ff473bd64968d16643f42");
+Kakao.init("debc5c4df380f44ec9068131a7888437");
 
 // 카카오 내비 연동
 const kakaoNav = document.querySelectorAll(".kakaoNav");
@@ -429,8 +429,9 @@ for (let i = 0; i < kakaoNav.length; i++) {
     e.preventDefault();
     Kakao.Navi.start({
       name: "라비다 하우스",
-      x: 127.099823,
-      y: 37.249854
+      x: 127.11205203011632,
+      y: 37.39279717586919,
+      coordType: 'wgs84'
     });
   });
 }
