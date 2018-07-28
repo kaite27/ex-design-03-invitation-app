@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/* wide-scr laptop, desktop : to 1280px  */
+
+@media only screen and (max-width: 1280px) {}
+
+/* wide-scr tablet, laptop : from 801 to 1024px */
+
+@media only screen and (max-width: 1024px) {}
+
+/* tablet mobiles: from 481 to 800px check when it's 768px */
+
+@media only screen and (max-width: 800px) {
+  /* 사이트 헤딩 폰트 사이즈 조절 */
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  body {
+    font-size: 16px;
+  }
+  /* 사이트 레이아웃 모바일에 맞게 조절 */
+  .container {
+    overflow: hidden;
+  }
+  .row,
+  section {
+    padding: 20px 0;
+  }
+  .row {
+    width: 100vw;
+  }
+  .logo {
+    height: 50px;
+  }
+  /* 메인 네비게이션 세팅 */
+  .main-nav {
+    display: none;
+    float: right;
+    margin-right: 20px;
+  }
+  .main-nav li {
+    display: block !important;
+    text-align: right !important;
+  }
+  .main-nav li:last-child {
+    margin-right: 0 !important;
+  }
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    font-size: 1.3rem;
+  }
+  /* 모바일용 네비게이션 아이콘 세팅 */
+  .mobile-nav-icon {
+    display: block;
+    width: 50px;
+    margin: 10px 0;
+  }
+  .image-box li img {
+    max-width: fit-content;
+  }
+  .hero-text-02 {
+    display: none;
+  }
+  .hero-text-01 {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin: 10px 0 !important;
+  }
+  .hero-text-01::after {
+    content: '';
+    width: 150px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin: 25px auto;
+  }
+  .hero-date {
+    font-size: 3rem !important;
+    margin: 30px 0 !important;
+  }
+  .main-hero-box .text-box {
+    left: 50%;
+    top: 78%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+  }
+  .text-only-box {
+    left: 50%;
+    top: 40%;
+    width: 310px;
+  }
+  .btn-rsvp {
+    display: inline-block;
+    margin: 0 auto 10px auto !important;
+    width: 210px;
+  }
+  .btn-direction {
+    min-width: 160px !important;
+  }
+  .bnt-dot-control {
+    height: 10vh;
+  }
+  .image-box img {
+    width: auto;
+    min-height: 100%;
+    transform-origin: left top;
+    transform: translateX(-35%);
+  }
+  /* ---- opening ---- */
+  /* OPENING */
+  .opening-box {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 0;
+    grid-template-rows: auto;
+    grid-template-areas: "mt" "tt";
+  }
+  .opening .section-text-01 {
+    font-size: 2.1rem;
+    margin-bottom: 0 !important;
+  }
+  .ment {
+    padding: 0 0 20px 0;
+    border-bottom: 1.4px dashed rgb(209, 209, 209);
+    border-right: 0px;
+  }
+  .time-table {
+    grid-area: tt;
+    font-weight: 600;
+    line-height: 1.2;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%)
+  }
+  .time-date {
+    margin: 20px 0 5px 0;
+  }
+  /* ---- groom and bride ---- */
+  .people {
+    grid-template-columns: 100%;
+    grid-gap: 0%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "gr" "br";
+  }
+  .groom-box {
+    grid-area: gr;
+    margin: -30px auto 30px auto;
+    padding-left: 0%;
+  }
+  .bride-box {
+    grid-area: br;
+    padding-right: 0%;
+  }
+  /* ---- where-and-when ---- */
+  .event-box {
+    padding: 0 1%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "ec" "ed";
+    margin: -25px auto 0 auto;
+  }
+  .event-contents {
+    grid-area: ec;
+  }
+  .event-contents .event-box-image {
+    margin: 0 auto;
+    width: 98%;
+    height: 280px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .tab-bar {
+    margin-top: -30px;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  .tab-bar .tab-links {
+    margin-right: 0;
+    width: 120px;
+    padding: 20px 0;
+    color: rgb(107, 107, 107);
+  }
+  .tab-bar .tab-links:after {
+    width: 0;
+  }
+  .tab-bar .tab-links.active,
+  .tab-bar .tab-links:visited {
+    color: #fff;
+    background-color: #f06374;
+  }
+  .event-detail .google-map {
+    margin: 20px auto;
+  }
+  /* ---- rsvp ---- */
+  .call-box {
+    text-align: center;
+    padding: 5px 0;
+    margin-top: -30px;
+    background-color: #fff1f1;
+  }
+  .rsvp-row-btn {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .rsvp-span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .rsvp fieldset {
+    margin: 10px 2%;
+  }
+  .rsvp .form-grid {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    padding: 0;
+    grid-template-areas: "frs" "scd" "thr";
+  }
+  /* ---- greeting ---- */
+  .testmonial-grid {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "tt1" "tt2" "tt3";
+  }
+  .testmonial {
+    margin-bottom: 10px;
+  }
+  .testmonial-text {
+    max-height: 40px;
+    line-height: 20px;
+  }
+  .greetings .button-group {
+    margin-top: -10px;
+  }
+  .greetings #leaveCommModal .button-group button {
+    width: 100px;
+    margin: 25px 0 0;
+  }
+  /* ---- gallery ---- */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+  }
+  .gallery .grid-column-1 {
+    background-attachment: fixed;
+    background-position-x: 48%;
+  }
+  .gallery .grid-column-4 {
+    background-attachment: fixed;
+    background-position-x: 60%;
+  }
+  .gallery .grid-column-6 {
+    background-attachment: fixed;
+    background-position-x: 70%;
+  }
+  .gallery .grid-column-8 {
+    background-attachment: fixed;
+    background-position-x: 65%;
+  }
+  /* ---- footer ---- */
+  footer .footer-address,
+  footer small {
+    margin: 0 0 10px 0;
+    padding: 0;
+    width: 80%;
+  }
+}
+
+/* mobiles: from 0 to 320px */
+
+@media only screen and (max-width: 376px) {
+  .btn-direction {
+    min-width: 140px !important;
+  }
+}
