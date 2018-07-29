@@ -1218,6 +1218,7 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
   max-height: 48px;
   line-height: 24px;
   overflow: hidden;
+  text-align: center;
 }
 
 .testmonial>.author {

@@ -214,6 +214,7 @@ function initMap() {
   const marker = new google.maps.Marker({
     position: weddingParty,
     map: map,
+    draggable: false,
     animation: google.maps.Animation.DROP,
     title: "라비다 하우스 3층",
     icon: icons.wedding.icon
@@ -222,7 +223,7 @@ function initMap() {
   const marker2 = new google.maps.Marker({
     position: bridalParty,
     map: map2,
-    draggable: true,
+    draggable: false,
     animation: google.maps.Animation.DROP,
     title: "펜션",
     icon: icons.bridal.icon
