@@ -27,6 +27,9 @@
     grid-area: tx;
     text-overflow: none;
     word-wrap: normal;
+    max-height: 80px;
+    height: auto;
+    text-align: left !important;
   }
   .testmonial>.author {
     margin-left: 30px;
