@@ -258,20 +258,20 @@
     grid-template-columns: repeat(auto-fit, minmax(100%, auto));
   }
   .gallery .grid-column-1 {
-    background-attachment: fixed;
     background-position-x: 48%;
+    background-attachment: scroll;
   }
   .gallery .grid-column-4 {
-    background-attachment: fixed;
     background-position-x: 60%;
+    background-attachment: scroll;
   }
   .gallery .grid-column-6 {
-    background-attachment: fixed;
     background-position-x: 70%;
+    background-attachment: scroll;
   }
   .gallery .grid-column-8 {
-    background-attachment: fixed;
     background-position-x: 65%;
+    background-attachment: scroll;
   }
   /* ---- footer ---- */
   footer .footer-address,

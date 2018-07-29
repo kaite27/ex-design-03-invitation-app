@@ -1,30 +1,33 @@
 import axios from "axios";
 
-const invitationAPI = axios.create({ baseURL: process.env.API_URL });
+const invitationAPI = axios.create({
+  baseURL: process.env.API_URL
+});
 
 const templates = {
   commentList: document.querySelector("#comments").content,
   leaveSvgEl: document.querySelector("#modal-leave-done").content
 };
 
-async function comments() {
-  const res = await invitationAPI.get(
-    `/comments?_sort=id&_order=desc&_limit=3`
-  );
+{
+  async function comments() {
+    const res = await invitationAPI.get(
+      `/comments?_sort=id&_order=desc&_limit=3`
+    );
 
-  document.querySelector(".testmonial-grid").textContent = "";
+    document.querySelector(".testmonial-grid").textContent = "";
 
-  res.data.forEach(comm => {
-    const fragment = document.importNode(templates.commentList, true);
-    const bodyEl = fragment.querySelector(".testmonial-text");
-    const authorEl = fragment.querySelector(".author");
-    bodyEl.textContent = comm.body;
-    authorEl.textContent = comm.name;
-    document.querySelector(".testmonial-grid").appendChild(fragment);
-  });
+    res.data.forEach(comm => {
+      const fragment = document.importNode(templates.commentList, true);
+      const bodyEl = fragment.querySelector(".testmonial-text");
+      const authorEl = fragment.querySelector(".author");
+      bodyEl.textContent = comm.body;
+      authorEl.textContent = comm.name;
+      document.querySelector(".testmonial-grid").appendChild(fragment);
+    });
+  }
+  comments();
 }
-
-comments();
 
 const svgFragment = document.importNode(templates.leaveSvgEl, true);
 
@@ -124,8 +127,8 @@ function autoShowSlide() {
 autoShowSlide();
 
 /* Mobile navigation */
-$(document).ready(function() {
-  $(".js--nav-icon").click(function() {
+$(document).ready(function () {
+  $(".js--nav-icon").click(function () {
     const nav = $(".js--main-nav");
     const icon = $(".js--nav-icon i");
     const mobileMenu = $(".main-nav");
@@ -146,6 +149,24 @@ $(document).ready(function() {
     }
   });
 });
+
+
+// location.href depends on userAgent
+
+const mobileMap = document.querySelectorAll('.btn-mobile-map')
+
+for (let i = 0; i < mobileMap.length; i++) {
+  mobileMap[i].addEventListener("click", e => {
+    if (navigator.userAgent.match(/Android|Windows Phone|LG|SAMSUNG|Samsung/) != null) {
+      location.href = "geo:37.249854,127.099823"
+    } else if (navigator.userAgent.match(/iPhone|iPod|iPad|BlackBerry/) != null) {
+      location.href = "http://naver.me/Fh8EdsU3"
+    } else {
+      location.href = "http://naver.me/Fh8EdsU3"
+    }
+  });
+}
+
 
 /* where-and-when section : tab control */
 
@@ -202,12 +223,10 @@ function initMap() {
 
   const icons = {
     wedding: {
-      icon:
-        "https://github.com/beigenut/ex-design-03-invitation/blob/master/src/images/location.png?raw=true"
+      icon: "https://github.com/beigenut/ex-design-03-invitation/blob/master/src/images/location.png?raw=true"
     },
     bridal: {
-      icon:
-        "https://github.com/beigenut/ex-design-03-invitation/blob/master/src/images/location2.png?raw=true"
+      icon: "https://github.com/beigenut/ex-design-03-invitation/blob/master/src/images/location2.png?raw=true"
     }
   };
 
@@ -246,7 +265,7 @@ initMap();
 // bubbly-button
 const animateButton = e => {
   e.target.classList.add("animate");
-  setTimeout(function() {
+  setTimeout(function () {
     e.target.classList.remove("animate");
   }, 1000);
 };
@@ -258,28 +277,27 @@ for (let i = 0; i < bubblyButtons.length; i++) {
 }
 
 // scroll smoothes
-$(document).ready(function() {
+$(document).ready(function () {
   $('a[href*="#"]')
     .not('[href="#"]')
     .not('[href="#0"]')
-    .click(function(event) {
+    .click(function (event) {
       if (
         location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
+        this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
+        target = target.length ?
+          target :
+          $("[name=" + this.hash.slice(1) + "]");
         if (target.length) {
           event.preventDefault();
-          $("html, body").animate(
-            {
+          $("html, body").animate({
               scrollTop: target.offset().top
             },
             1000,
-            function() {
+            function () {
               var $target = $(target);
               $target.focus();
               if ($target.is(":focus")) {
@@ -356,21 +374,20 @@ btnAttend.addEventListener("click", async e => {
   if (currentOpen === 1) {
     name1El.value === "" ? alert("이름을 입력해주세요!") : sendApplication();
   } else if (currentOpen === 2) {
-    name1El.value === "" || name2El.value === ""
-      ? alert("이름을 입력해주세요!")
-      : sendApplication();
+    name1El.value === "" || name2El.value === "" ?
+      alert("이름을 입력해주세요!") :
+      sendApplication();
   } else if (currentOpen === 3) {
-    name1El.value === "" || name2El.value === "" || name3El.value === ""
-      ? alert("이름을 입력해주세요!")
-      : sendApplication();
+    name1El.value === "" || name2El.value === "" || name3El.value === "" ?
+      alert("이름을 입력해주세요!") :
+      sendApplication();
   }
 });
 
 async function sendApplication() {
   const now = new Date();
   const reviewDate = now.toDateString();
-  const payload = [
-    {
+  const payload = [{
       date: reviewDate,
       name: name1.value,
       contact: contact1.value,
