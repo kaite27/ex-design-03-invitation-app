@@ -1212,7 +1212,7 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 .testmonial-text {
   text-overflow: ellipsis;
   word-wrap: break-word;
-  display: -webkit-box;
+  display: inline-block;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   max-height: 48px;
