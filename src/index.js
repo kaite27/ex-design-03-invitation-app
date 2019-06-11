@@ -235,7 +235,7 @@ function initMap() {
     map: map,
     draggable: false,
     animation: google.maps.Animation.DROP,
-    title: "라비다 하우스 3층",
+    title: "웨딩 하우스 3층",
     icon: icons.wedding.icon
   });
 
@@ -446,7 +446,7 @@ for (let i = 0; i < kakaoNav.length; i++) {
   kakaoNav[i].addEventListener("click", e => {
     e.preventDefault();
     Kakao.Navi.start({
-      name: "라비다 하우스",
+      name: "웨딩 하우스",
       x: 127.099823,
       y: 37.249854,
       coordType: 'wgs84'

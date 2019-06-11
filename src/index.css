@@ -183,6 +183,7 @@ html [type=button] {
     stroke-dashoffset: 60;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 00;
     opacity: 1;
@@ -194,6 +195,7 @@ html [type=button] {
     stroke-dashoffset: 60;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 00;
     opacity: 1;
@@ -205,6 +207,7 @@ html [type=button] {
     stroke-dashoffset: 60;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 00;
     opacity: 1;
@@ -223,6 +226,7 @@ html [type=button] {
   from {
     stroke-dashoffset: 120;
   }
+
   to {
     stroke-dashoffset: 45;
   }
@@ -232,6 +236,7 @@ html [type=button] {
   from {
     stroke-dashoffset: 120;
   }
+
   to {
     stroke-dashoffset: 45;
   }
@@ -241,6 +246,7 @@ html [type=button] {
   from {
     stroke-dashoffset: 120;
   }
+
   to {
     stroke-dashoffset: 45;
   }
@@ -260,6 +266,7 @@ html [type=button] {
     stroke-dashoffset: 300;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -271,6 +278,7 @@ html [type=button] {
     stroke-dashoffset: 300;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -282,6 +290,7 @@ html [type=button] {
     stroke-dashoffset: 300;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -302,6 +311,7 @@ html [type=button] {
     stroke-dashoffset: 320;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 20;
     opacity: 1;
@@ -313,6 +323,7 @@ html [type=button] {
     stroke-dashoffset: 320;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 20;
     opacity: 1;
@@ -324,6 +335,7 @@ html [type=button] {
     stroke-dashoffset: 320;
     opacity: 1;
   }
+
   to {
     stroke-dashoffset: 20;
     opacity: 1;
@@ -460,9 +472,11 @@ html [type=button] {
   0% {
     background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
   }
+
   50% {
     background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
   }
+
   100% {
     background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
@@ -473,9 +487,11 @@ html [type=button] {
   0% {
     background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
   }
+
   50% {
     background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
   }
+
   100% {
     background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
@@ -817,14 +833,15 @@ nav>.main-nav>li:last-child {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background-image: url("images/groom.jpg");
-  background-position: 8% 36%;
+  background-image: url("https://image.freepik.com/free-photo/stylish-groom_1157-13809.jpg");
+  background-position: 60% 10%;
   background-size: 230%;
 }
 
 .bride-image-box {
-  background-image: url("images/bride.jpg");
-  background-position: 87% 28%;
+  background-image: url("https://image.freepik.com/free-photo/portrair-dreamy-blonde-bride-posing-luxury-room-before-ceremony_8353-7449.jpg");
+  background-position: 58% 0%;
+  background-size: cover;
 }
 
 .people .name {
@@ -933,6 +950,7 @@ nav>.main-nav>li:last-child {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1331,7 +1349,7 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 
 .gallery .grid-column-1 {
   grid-row: span 2;
-  background: url("images/gallery-1.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/bride-groom-pose-large-circle-lilac-garden_8353-1246.jpg") no-repeat;
   background-size: cover;
   background-position-x: 55%;
   -moz-background-size: cover;
@@ -1341,23 +1359,23 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 
 .gallery .grid-column-2 {
   grid-row: span 3;
-  background: url("images/gallery-2.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/part-wedding-wedding-memory_33799-44.jpg") no-repeat;
   background-size: cover;
   background-position-y: 95%;
 }
 
 .gallery .grid-column-3 {
   grid-row: span 2;
-  background: url("images/gallery-4.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/pretty-bride-smelling-bunch_1153-3018.jpg") no-repeat;
   background-size: cover;
-  background-position-y: 50%;
+  /* background-position-y: 50%; */
 }
 
 .gallery .grid-column-4 {
   grid-row: span 3;
-  background: url("images/gallery-3.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/beautiful-bride-with-her-husband-park_1157-19025.jpg") no-repeat;
   background-size: cover;
-  background-position-y: 15%;
+  background-position-x: 100%;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -1365,15 +1383,16 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 
 .gallery .grid-column-5 {
   grid-row: span 4;
-  background: url("images/gallery-5.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/elegant-wedding-couple_1157-18560.jpg") no-repeat;
   background-size: cover;
+  background-position-x: 60%;
 }
 
 .gallery .grid-column-6 {
   grid-row: span 1;
-  background: url("images/gallery-6.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/wedding-couple-france_1303-5581.jpg?1") no-repeat;
   background-size: cover;
-  background-position-y: 80%;
+  background-position-y: 30%;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -1381,14 +1400,14 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 
 .gallery .grid-column-7 {
   grid-row: span 3;
-  background: url("images/gallery-7.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/beautiful-bride-with-her-husband-park_1157-19040.jpg") no-repeat;
   background-size: cover;
   background-position-y: 60%;
 }
 
 .gallery .grid-column-8 {
   grid-row: span 3;
-  background: url("images/gallery-8.jpg") no-repeat;
+  background: url("https://image.freepik.com/free-photo/happy-bride-groom-cut-wedding-cake_8353-9297.jpg") no-repeat;
   background-size: cover;
   background-position-x: 70%;
   -moz-background-size: cover;
