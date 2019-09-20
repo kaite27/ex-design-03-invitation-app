@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const invitationAPI = axios.create({ baseURL: process.env.API_URL });
+const invitationAPI = axios.create({
+  baseURL: process.env.API_URL
+});
 
 const templates = {
   commentList: document.querySelector("#comments").content,
@@ -61,8 +63,8 @@ modalBtnLeave.addEventListener("click", async e => {
 });
 
 /* Mobile navigation */
-$(document).ready(function() {
-  $(".js--nav-icon").click(function() {
+$(document).ready(function () {
+  $(".js--nav-icon").click(function () {
     const nav = $(".js--main-nav");
     const icon = $(".js--nav-icon i");
     const mobileMenu = $(".main-nav");
