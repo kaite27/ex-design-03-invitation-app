@@ -322,25 +322,26 @@ const form3 = document.querySelector(".third");
 const name3El = document.querySelector("#rsvp-name-thr");
 const name2El = document.querySelector("#rsvp-name-scd");
 const name1El = document.querySelector("#rsvp-name");
+// To varify email-format
+const contact3El = document.querySelector("#rsvp-contact-thr");
+const contact2El = document.querySelector("#rsvp-contact-scd");
+const contact1El = document.querySelector("#rsvp-contact");
 const btnAttend = document.querySelector(".submit-attend");
 
 const name1 = document.querySelector(".name1");
 const contact1 = document.querySelector(".contact1");
 const checked1 = document.querySelector(".checked1");
 const comment1 = document.querySelector(".comment1");
-const isAtteding1 = checked1.checked ? "yes" : "no";
 
 const name2 = document.querySelector(".name2");
 const contact2 = document.querySelector(".contact2");
 const checked2 = document.querySelector(".checked2");
 const comment2 = document.querySelector(".comment2");
-const isAtteding2 = checked2.checked ? "yes" : "no";
 
 const name3 = document.querySelector(".name3");
 const contact3 = document.querySelector(".contact3");
 const checked3 = document.querySelector(".checked3");
 const comment3 = document.querySelector(".comment3");
-const isAtteding3 = checked3.checked ? "yes" : "no";
 
 plus.addEventListener("click", e => {
   e.preventDefault();
@@ -372,7 +373,7 @@ remove.addEventListener("click", e => {
 btnAttend.addEventListener("click", async e => {
   e.preventDefault ? e.preventDefault() : (e.returnValue = false);
   if (currentOpen === 1) {
-    name1El.value === "" ? alert("이름을 입력해주세요!") : sendApplication();
+    name1El.value === "" ? alert("입력해주세요!") : sendApplication();
   } else if (currentOpen === 2) {
     name1El.value === "" || name2El.value === "" ?
       alert("이름을 입력해주세요!") :
@@ -391,33 +392,94 @@ async function sendApplication() {
       date: reviewDate,
       name: name1.value,
       contact: contact1.value,
-      attendence: isAtteding1,
+      attendence: checked1.checked,
       comment: comment1.value
     },
     {
       date: reviewDate,
       name: name2.value,
       contact: contact2.value,
-      attendence: isAtteding2,
+      attendence: checked2.checked,
       comment: comment2.value
     },
     {
       date: reviewDate,
       name: name3.value,
       contact: contact3.value,
-      attendence: isAtteding3,
+      attendence: checked3.checked,
       comment: comment3.value
     }
   ];
+  const guestData = [{
+    user_id: `${process.env.USER_ID}`,
+    template_id: `${process.env.TEMPLATE_ID}`,
+    service_id: `${process.env.SERVICE_ID}`,
+    template_params: {
+      "to_name": `${name1.value}`,
+      "to_email": `${contact1.value}`,
+      "from_name": "Mary",
+      "from_address": "fort",
+      "from_state": "ny",
+      "from_zip": "10000"
+    }
+  }, {
+    user_id: `${process.env.USER_ID}`,
+    template_id: `${process.env.TEMPLATE_ID}`,
+    service_id: `${process.env.SERVICE_ID}`,
+    template_params: {
+      "to_name": `${name2.value}`,
+      "to_email": `${contact2.value}`,
+      "from_name": "Mary",
+      "from_address": "fort",
+      "from_state": "ny",
+      "from_zip": "10000"
+    }
+  }, {
+    user_id: `${process.env.USER_ID}`,
+    template_id: `${process.env.TEMPLATE_ID}`,
+    service_id: `${process.env.SERVICE_ID}`,
+    template_params: {
+      "to_name": `${name3.value}`,
+      "to_email": `${contact3.value}`,
+      "from_name": "Mary",
+      "from_address": "fort",
+      "from_state": "ny",
+      "from_zip": "10000"
+    }
+  }]
+  const guestInfoToMe = {
+    user_id: `${process.env.USER_ID}`,
+    template_id: `${process.env.TEMPLATE_ID_TO_ME}`,
+    service_id: `${process.env.SERVICE_ID}`,
+    template_params: {
+      "to_name": "Kate",
+      "to_email": "beigenut@gmail.com",
+      "date_request": `${reviewDate}`,
+      "guest_1_info_name": `${name1.value}`,
+      "guest_1_info_contact": `${contact1.value}`,
+      "guest_1_info_isAttend": `${checked1.checked}`,
+      "guest_1_info_message": `${comment1.value}`,
+      "guest_2_info_name": `${name2.value}`,
+      "guest_2_info_contact": `${contact2.value}`,
+      "guest_2_info_isAttend": `${checked2.checked}`,
+      "guest_2_info_message": `${comment2.value}`,
+      "guest_3_info_name": `${name3.value}`,
+      "guest_3_info_contact": `${contact3.value}`,
+      "guest_3_info_isAttend": `${checked3.checked}`,
+      "guest_3_info_message": `${comment3.value}`,
+      "from_name": "Kate"
+    }
+  }
 
   const attendedName = document.querySelector(".attendies");
   let attediesName = "";
   for (let i = 0; i < currentOpen; i++) {
-    const res = await invitationAPI.post(`/attendies`, payload[i]);
-    // console.log(payload[i]);
-    attediesName += `${payload[i].name}, `;
+    await invitationAPI.post(`/attendies`, payload[i]);
+    await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestData[i])
+    attediesName += ` ${payload[i].name}`;
   }
-  attendedName.textContent = `${attediesName}의 신청이 완료되었습니다!`;
+  await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestInfoToMe)
+  attendedName.textContent = `${attediesName} 총 ${currentOpen}건의 신청이 완료되었습니다!`;
   $("#doneModal").modal("toggle");
 
   name1.value = "";
