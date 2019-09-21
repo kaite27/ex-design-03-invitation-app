@@ -58,7 +58,6 @@ modalBtnLeave.addEventListener("click", async e => {
   };
   modalFormEl.textContent = "";
   modalFormEl.appendChild(svgFragment);
-  // console.log(payload.name, payload.body, payload.date);
   const res = await invitationAPI.post(`/comments`, payload);
   comments();
 });
@@ -373,7 +372,7 @@ remove.addEventListener("click", e => {
 btnAttend.addEventListener("click", async e => {
   e.preventDefault ? e.preventDefault() : (e.returnValue = false);
   if (currentOpen === 1) {
-    name1El.value === "" ? alert("입력해주세요!") : sendApplication();
+    name1El.value === "" ? alert("입력해주세요!") : sendApplication()
   } else if (currentOpen === 2) {
     name1El.value === "" || name2El.value === "" ?
       alert("이름을 입력해주세요!") :
@@ -472,7 +471,10 @@ async function sendApplication() {
   }
 
   const attendedName = document.querySelector(".attendies");
+  const modalLoad = document.querySelector(".modal-loading")
+  const modalDone = document.querySelector(".modal-done")
   let attediesName = "";
+  $("#doneModal").modal("toggle");
   for (let i = 0; i < currentOpen; i++) {
     await invitationAPI.post(`/attendies`, payload[i]);
     await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestData[i])
@@ -480,7 +482,8 @@ async function sendApplication() {
   }
   await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestInfoToMe)
   attendedName.textContent = `${attediesName} 총 ${currentOpen}건의 신청이 완료되었습니다!`;
-  $("#doneModal").modal("toggle");
+  modalLoad.style.display = "none"
+  modalDone.classList.remove("offScreen")
 
   name1.value = "";
   contact1.value = "";

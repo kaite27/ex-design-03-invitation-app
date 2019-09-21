@@ -137,7 +137,7 @@ html [type=button] {
 
 .circle {
   fill: none;
-  stroke: #e75768;
+  stroke: #fff;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-miterlimit: 10;
@@ -145,7 +145,7 @@ html [type=button] {
 
 .circle-dash {
   fill: none;
-  stroke: #e75768;
+  stroke: #fff;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-miterlimit: 10;
@@ -153,7 +153,7 @@ html [type=button] {
 
 .check {
   fill: none;
-  stroke: #e75768;
+  stroke: #fff;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -162,7 +162,7 @@ html [type=button] {
 
 .check-dash {
   fill: none;
-  stroke: #e75768;
+  stroke: #fff;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -342,68 +342,62 @@ html [type=button] {
   }
 }
 
-.myButton {
-  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
-  background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-  background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-  background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-  background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);
-  background-color: #ffffff;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #dcdcdc;
-  display: inline-block;
-  cursor: pointer;
-  color: #1E4164;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: regular;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 2px 0px #ffffff;
-}
-
-.myButton:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
-  background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-  background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-  background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-  background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0);
-  background-color: #f6f6f6;
-}
-
-.myButton:active {
-  position: relative;
-  top: 1px;
-}
-
 .modal {
-  top: 50%;
-  transform: translateY(-50%);
+  overflow-y: hidden !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+}
+
+.modal-content {
+  background-color: #e75768;
+  color: #fff;
+  border: none;
 }
 
 .modal-done {
   text-align: center;
-  margin-top: 15px;
+}
+
+.attendies {
+  margin-top: 30px;
 }
 
 .modal-title {
-  color: #e75768;
+  color: #fff;
   font-weight: 600;
   font-size: 2.3rem;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 10px auto;
+}
+
+.modal-dialog {
+  max-width: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+
+.modal-body {
+  padding: 30px 1rem;
 }
 
 .close {
   font-size: 2rem;
+}
+
+.close span {
+  color: #fff;
+}
+
+/* loading in modal */
+.modal-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  padding-left: 10px;
 }
 
 /* bubbly-button design */
@@ -533,6 +527,7 @@ body .btn:active {
 body .btn:hover {
   transition: all 150ms linear;
   opacity: 0.85;
+  color: #fff;
 }
 
 body .btn-direction {
@@ -584,6 +579,7 @@ nav>.main-nav {
   font-size: 1.1rem;
   float: right;
   line-height: calc(10vh - 10px);
+  margin-bottom: 0;
 }
 
 nav>.main-nav a {
@@ -1280,12 +1276,16 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 }
 
 #leaveCommModal {
-  height: 410px !important;
   overflow-y: hidden;
+}
+
+.leave-comm-form {
+  text-align: left;
 }
 
 .leave-modal-title {
   font-size: 1.8rem;
+  text-align: center;
 }
 
 .form-group {
@@ -1303,6 +1303,9 @@ fieldset label input[type="radio"]:checked~.fa-check-circle {
 .modal-doen-span {
   font-size: 1.1rem;
   line-height: 1;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
 }
 
 /* ------------------------------------------------------------------------------------- */
