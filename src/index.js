@@ -371,16 +371,21 @@ remove.addEventListener("click", e => {
 
 btnAttend.addEventListener("click", async e => {
   e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+  const person1 = name1El.value === '' || contact1El.value === ''
+  const person2 = name2El.value === '' || contact2El.value === ''
+  const person3 = name3El.value === '' || contact3El.value === ''
+  const person1EmailCheck = contact1El.value.includes('@', 2) && contact1El.value.includes('.', 5)
+  const person2EmailCheck = contact2El.value.includes('@', 2) && contact2El.value.includes('.', 5)
+  const person3EmailCheck = contact3El.value.includes('@', 2) && contact3El.value.includes('.', 5)
+
   if (currentOpen === 1) {
-    name1El.value === "" ? alert("입력해주세요!") : sendApplication()
+    person1 ? alert("Please enter your name and email") : person1EmailCheck ? sendApplication() : alert("Email must include '@ .'")
   } else if (currentOpen === 2) {
-    name1El.value === "" || name2El.value === "" ?
-      alert("이름을 입력해주세요!") :
-      sendApplication();
+    person1 || person2 ?
+      alert("Please enter all participants names and emails") : person1EmailCheck && person2EmailCheck ? sendApplication() : alert("Email must include '@ .'")
   } else if (currentOpen === 3) {
-    name1El.value === "" || name2El.value === "" || name3El.value === "" ?
-      alert("이름을 입력해주세요!") :
-      sendApplication();
+    person1 || person2 || person3 ?
+      alert("Please enter all participants names and emails") : person1EmailCheck && person2EmailCheck && person3EmailCheck ? sendApplication() : alert("Email must include '@ .'")
   }
 });
 
@@ -474,13 +479,18 @@ async function sendApplication() {
   const modalLoad = document.querySelector(".modal-loading")
   const modalDone = document.querySelector(".modal-done")
   let attediesName = "";
+
   $("#doneModal").modal("toggle");
+
   for (let i = 0; i < currentOpen; i++) {
-    await invitationAPI.post(`/attendies`, payload[i]);
-    await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestData[i])
+    // await invitationAPI.post(`/attendies`, payload[i]);
+    // await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestData[i])
+    alert("done1")
     attediesName += ` ${payload[i].name}`;
   }
-  await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestInfoToMe)
+
+  // await axios.post('https://api.emailjs.com/api/v1.0/email/send', guestInfoToMe)
+  alert("done2")
   attendedName.textContent = `${attediesName} 총 ${currentOpen}건의 신청이 완료되었습니다!`;
   modalLoad.style.display = "none"
   modalDone.classList.remove("offScreen")

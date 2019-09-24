@@ -62,6 +62,25 @@ Features :
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+#### Google Map
+
+Google Maps has a limit on the number of calls. To avoid the message below, register your credit card information on Google map dev site.
+
+`구글 지도를 제대로 로드할 수 없습니다.`
+
+<br>
+
+
+#### Kakao Talk message push
+
+In order to use the `auto-reply` feature provided by KakaoTalk, you must register on the Kakao Plus Friends Manager first.
+
+Please check the usage [here](https://accounts.kakao.com/login/kakaoforbusiness?continue=https://center-pf.kakao.com/).
+
+
+<br>
+
+
 #### Meta Tags
 
 This application is limited on use in Korea. `Kakao Navigator` or `Kakao Talk` which is mainly used in Korea has been integrated.
@@ -79,21 +98,6 @@ Once attach the site url to Web Messenger(e.g Kakao Talk, Facebook), please use 
 <meta property="og:image" content="">
 ```
 
-<br>
-
-#### Google Map
-
-Google Maps has a limit on the number of calls. To avoid the message below, register your credit card information on Google map dev site.
-
-`구글 지도를 제대로 로드할 수 없습니다.`
-
-<br>
-
-#### Kakao Talk message push
-
-In order to use the `auto-reply` feature provided by KakaoTalk, you must register on the Kakao Plus Friends Manager first.
-
-Please check the usage [here](https://accounts.kakao.com/login/kakaoforbusiness?continue=https://center-pf.kakao.com/).
 
 
 <!-- CONTRIBUTING -->
@@ -112,7 +116,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/beigenut/ex-design-03-invitation](https://github.com/beigenut/ex-design-03-invitation)
+Project Link: [https://github.com/beigenut/ex-design-03-invitation-app](https://github.com/beigenut/ex-design-03-invitation-app)
 
 
 
